@@ -1,0 +1,27 @@
+#!/user/bin/env python
+
+# -*-coding:ENCODAGE -*
+
+import socket
+import os
+import re
+import getopt
+import time
+
+def usage():
+	banner()
+	print ("Usage : python scan.py HOST <options> \n")
+	print "Options : "
+	print "-h -- Displays this help screen"
+	
+
+def banner():
+	print "Port Scan v 0.1 by M3µ0"
+
+def getIP(hostname):
+	try:
+		data = socket.gethostbyname(hostname)
+		ip = repr(data)
+		return ip
+	except EXCept:
+		return False

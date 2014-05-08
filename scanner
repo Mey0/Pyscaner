@@ -7,6 +7,9 @@ import os
 import re
 import getopt
 import time
+from blessings import Terminal
+
+t = Terminal()
 
 def usage():
 	banner()
@@ -16,12 +19,14 @@ def usage():
 	
 
 def banner():
+	os.system("figlet maCERT")
 	print "Port Scan v 0.1 by M3µ0"
+	
 
 def getIP(hostname):
 	try:
 		data = socket.gethostbyname(hostname)
 		ip = repr(data)
 		return ip
-	except EXCept:
+	except Except:
 		return False
